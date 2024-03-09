@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BannerTableViewCell" rowHeight="200" id="y5K-wh-qIC" customClass="BannerTableViewCell" customModule="ios_examination" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="430" height="200"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="y5K-wh-qIC" id="1iB-Rh-VfI">
+                <rect key="frame" x="0.0" y="0.0" width="430" height="200"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="joc-pO-mAr">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="200"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="200" id="89g-oG-Kuj"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="owK-cm-85d">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="qgV-aS-2uo">
+                        <rect key="frame" x="20" y="161" width="390" height="26"/>
+                        <color key="pageIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="currentPageIndicatorTintColor" systemColor="systemRedColor"/>
+                    </pageControl>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="qgV-aS-2uo" secondAttribute="bottom" id="3gc-RZ-WoD"/>
+                    <constraint firstAttribute="trailing" secondItem="joc-pO-mAr" secondAttribute="trailing" id="Gnl-Z6-xjV"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="qgV-aS-2uo" secondAttribute="trailing" id="MGS-1O-P2O"/>
+                    <constraint firstItem="joc-pO-mAr" firstAttribute="top" secondItem="1iB-Rh-VfI" secondAttribute="top" id="aE0-tg-Oha"/>
+                    <constraint firstAttribute="bottom" secondItem="joc-pO-mAr" secondAttribute="bottom" id="wLM-qh-V6o"/>
+                    <constraint firstItem="joc-pO-mAr" firstAttribute="leading" secondItem="1iB-Rh-VfI" secondAttribute="leading" id="xZU-0R-cLy"/>
+                    <constraint firstItem="qgV-aS-2uo" firstAttribute="leading" secondItem="1iB-Rh-VfI" secondAttribute="leadingMargin" id="yRX-LG-Dfa"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="collectionView" destination="joc-pO-mAr" id="743-QA-547"/>
+                <outlet property="pagerControl" destination="qgV-aS-2uo" id="gyg-N2-2Ts"/>
+            </connections>
+            <point key="canvasLocation" x="51.908396946564885" y="6.3380281690140849"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
