@@ -11,6 +11,11 @@ struct DetailTableViewCellModel {
     let image: String
     let title: String
     let description: String
+    let borderColor: UIColor
+    let titleColor: UIColor
+    let subTitleColor: UIColor
+    let backgroundColor: UIColor
+    let contentColor: UIColor
 }
 
 class DetailTableViewCell: UITableViewCell {
@@ -36,5 +41,11 @@ class DetailTableViewCell: UITableViewCell {
         imageDetail.loadImage(from: model.image)
         titleLabel.text = model.title
         descriptionLabel.text = model.description
+        
+        contentView.backgroundColor = model.backgroundColor
+        stackView.backgroundColor = model.contentColor
+        stackView.layer.borderColor = model.borderColor.cgColor
+        titleLabel.textColor = model.titleColor
+        descriptionLabel.textColor = model.subTitleColor
     }
 }

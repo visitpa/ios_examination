@@ -9,6 +9,8 @@ import UIKit
 
 struct HeaderTableViewCellModel {
     let header: String
+    let backgroundColor: UIColor
+    let fontColor: UIColor
 }
 
 class HeaderTableViewCell: UITableViewCell {
@@ -21,5 +23,7 @@ class HeaderTableViewCell: UITableViewCell {
     
     func setCell(model: HeaderTableViewCellModel) {
         headerLabel.text = model.header
+        headerLabel.textColor = model.fontColor
+        contentView.backgroundColor = model.backgroundColor
     }
 }

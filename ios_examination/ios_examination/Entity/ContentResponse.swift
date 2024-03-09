@@ -22,10 +22,17 @@ struct ResponseObject: Codable {
 // MARK: - ContentShelf
 struct ContentShelf: Codable {
     let items: [Item]?
-    let subTitle, title, type: String?
+    let type: ItemType?
+    let subTitle, title: String?
     let viewMore: ViewMore?
     let coverURL: String?
 
+    enum ItemType: String, Codable, Equatable {
+        case banner = "banner_1"
+        case carousel
+        case eventSingleCard
+    }
+    
     enum CodingKeys: String, CodingKey {
         case items, subTitle, title, type, viewMore
         case coverURL = "coverUrl"

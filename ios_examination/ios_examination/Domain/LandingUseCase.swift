@@ -8,7 +8,7 @@
 import Foundation
 
 protocol LandingUseCaseDomain {
-    func getContent(completion: @escaping (Content) -> Void)
+    func getContent(completion: @escaping (Result<Content, CommonError>) -> Void)
 }
 
 final class LandingUseCase: LandingUseCaseDomain {
@@ -17,7 +17,7 @@ final class LandingUseCase: LandingUseCaseDomain {
         self.remoteRepository = remoteRepository
     }
     
-    func getContent(completion: @escaping (Content) -> Void) {
+    func getContent(completion: @escaping (Result<Content, CommonError>) -> Void) {
         remoteRepository.getContent(completion: completion)
     }
 }

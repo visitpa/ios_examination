@@ -39,6 +39,8 @@
 		771D61472B9CA166001204F6 /* ContentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771D61462B9CA166001204F6 /* ContentResponse.swift */; };
 		771D61492B9CAB9F001204F6 /* LandingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771D61482B9CAB9F001204F6 /* LandingModels.swift */; };
 		771D614C2B9CB555001204F6 /* Extension+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771D614B2B9CB555001204F6 /* Extension+UIImageView.swift */; };
+		EDAD9B0D2B9CCC4C003FC8F8 /* CommonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAD9B0C2B9CCC4C003FC8F8 /* CommonError.swift */; };
+		EDAD9B0F2B9CCF74003FC8F8 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAD9B0E2B9CCF74003FC8F8 /* Extension+UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,8 @@
 		771D61462B9CA166001204F6 /* ContentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentResponse.swift; sourceTree = "<group>"; };
 		771D61482B9CAB9F001204F6 /* LandingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingModels.swift; sourceTree = "<group>"; };
 		771D614B2B9CB555001204F6 /* Extension+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImageView.swift"; sourceTree = "<group>"; };
+		EDAD9B0C2B9CCC4C003FC8F8 /* CommonError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonError.swift; sourceTree = "<group>"; };
+		EDAD9B0E2B9CCF74003FC8F8 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				771D61462B9CA166001204F6 /* ContentResponse.swift */,
+				EDAD9B0C2B9CCC4C003FC8F8 /* CommonError.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -312,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				771D614B2B9CB555001204F6 /* Extension+UIImageView.swift */,
+				EDAD9B0E2B9CCF74003FC8F8 /* Extension+UIView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -454,8 +460,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				771D61242B9C7A4A001204F6 /* HeaderTableViewCell.swift in Sources */,
+				EDAD9B0D2B9CCC4C003FC8F8 /* CommonError.swift in Sources */,
 				771D61452B9C9D23001204F6 /* Constants.swift in Sources */,
 				771D61372B9C95CA001204F6 /* LandingWorker.swift in Sources */,
+				EDAD9B0F2B9CCF74003FC8F8 /* Extension+UIView.swift in Sources */,
 				771D613C2B9C9614001204F6 /* LandingUseCase.swift in Sources */,
 				771D61172B9C6F91001204F6 /* LandingInteractor.swift in Sources */,
 				771D60E22B9C6AE4001204F6 /* LandingViewController.swift in Sources */,

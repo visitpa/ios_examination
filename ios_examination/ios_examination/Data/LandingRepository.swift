@@ -8,5 +8,5 @@
 import Foundation
 
 protocol LandingRepository {
-    func getContent(completion: @escaping (Content) -> Void)
+    func getContent(completion: @escaping (Result<Content, CommonError>) -> Void)
 }

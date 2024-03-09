@@ -13,12 +13,12 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="182" id="KGk-i7-Jjw" customClass="ListTableViewCell" customModule="ios_examination" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="311" height="182"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="311" height="182"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="UR1-lL-O1e">
-                        <rect key="frame" x="24" y="16" width="263" height="150"/>
+                        <rect key="frame" x="24" y="0.0" width="263" height="150"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="150" id="ncJ-fO-LhD"/>
@@ -34,7 +34,7 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="UR1-lL-O1e" secondAttribute="trailing" constant="24" id="Ex3-k2-ANm"/>
                     <constraint firstAttribute="bottom" secondItem="UR1-lL-O1e" secondAttribute="bottom" constant="16" id="FLt-vQ-yAf"/>
-                    <constraint firstItem="UR1-lL-O1e" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="IM7-et-vaJ"/>
+                    <constraint firstItem="UR1-lL-O1e" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="IM7-et-vaJ"/>
                     <constraint firstItem="UR1-lL-O1e" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="yCh-vI-y4a"/>
                 </constraints>
             </tableViewCellContentView>

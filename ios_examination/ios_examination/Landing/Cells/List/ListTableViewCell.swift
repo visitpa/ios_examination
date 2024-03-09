@@ -9,6 +9,7 @@ import UIKit
 
 struct ListTableViewCellModel {
     let images: [String]
+    let color: UIColor
 }
 
 class ListTableViewCell: UITableViewCell {
@@ -29,6 +30,8 @@ class ListTableViewCell: UITableViewCell {
     }
     
     func setCell(model: ListTableViewCellModel) {
+        contentView.backgroundColor = model.color
+        collectionView.backgroundColor = model.color
         images = model.images
     }
 }

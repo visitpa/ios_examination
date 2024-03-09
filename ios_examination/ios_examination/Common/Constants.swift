@@ -13,4 +13,12 @@ class Constants {
     var baseUrl: String {
         return "https://wv-interview.web.app"
     }
+    
+    var errorNoInternetMessage: String {
+        return "No Internet Connection, please check your internet"
+    }
+    
+    var commonErrorMessage: String {
+        return "Something went wrong, please try again"
+    }
 }

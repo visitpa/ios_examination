@@ -10,16 +10,21 @@ import UIKit
 protocol LandingViewControllerDisplayLogic {
     func displayContent(viewModel: LandingModels.Content.ViewModel)
     func displayLoading(loading: Bool)
-
+    func displayError(viewModel: LandingModels.Error.ViewModel)
+    func displayTheme(viewModel: LandingModels.ChangeTheme.ViewModel)
 }
 
 class LandingViewController: UIViewController {
+    var interactor: LandingInteractorBusinessLogic!
+
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var errorStackView: UIStackView!
     @IBOutlet weak var errorTitle: UILabel!
-    var interactor: LandingInteractorBusinessLogic!
-    var datas: [LandingModels.CellType] = []
+    @IBOutlet weak var themeView: UIView!
+    @IBOutlet weak var themIcon: UIImageView!
+    private let refreshControl = UIRefreshControl()
+    private var datas: [LandingModels.CellType] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,10 +36,17 @@ class LandingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
         setupTableViewCell()
         interactor.getContent()
     }
 
+    private func setupUI() {
+        themeView.makeCircular()
+        themeView.addShadow()
+        themIcon.tintColor = .black
+    }
+    
     private func setupTableViewCell() {
         tableView.dataSource = self
         let bannerNib = UINib(nibName: "BannerTableViewCell", bundle: nil)
@@ -45,10 +57,21 @@ class LandingViewController: UIViewController {
         tableView.register(headerNib, forCellReuseIdentifier: "HeaderTableViewCell")
         tableView.register(listNib, forCellReuseIdentifier: "ListTableViewCell")
         tableView.register(detailNib, forCellReuseIdentifier: "DetailTableViewCell")
+        
+        tableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
     }
     
     @IBAction func retryPressed() {
-        
+        interactor.getContent()
+    }
+    
+    @IBAction func changeThemePressed() {
+        interactor.changeTheme()
+    }
+    
+    @objc func refreshData() {
+        interactor.getContent()
     }
 }
 
@@ -56,11 +79,29 @@ extension LandingViewController: LandingViewControllerDisplayLogic {
     func displayContent(viewModel: LandingModels.Content.ViewModel) {
         datas = viewModel.datas
         tableView.isHidden = false
+        themeView.isHidden = false
         tableView.reloadData()
     }
     
     func displayLoading(loading: Bool) {
+        tableView.isHidden = true
+        errorStackView.isHidden = true
+        themeView.isHidden = true
         indicator.isHidden = !loading
+        refreshControl.endRefreshing()
+    }
+    
+    func displayError(viewModel: LandingModels.Error.ViewModel) {
+        tableView.isHidden = true
+        themeView.isHidden = true
+        errorStackView.isHidden = false
+        errorTitle.text = viewModel.message
+    }
+    
+    func displayTheme(viewModel: LandingModels.ChangeTheme.ViewModel) {
+        tableView.backgroundColor = viewModel.backgroundColor
+        themIcon.tintColor = viewModel.tintColor
+        themeView.backgroundColor = viewModel.themeViewBackgroundColor
     }
 }
 
